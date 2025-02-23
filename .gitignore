@@ -5,7 +5,10 @@
 *.o
 *.ko
 *.obj
+*.d
+*push_swap
 *.elf
+*.json
 
 # Linker output
 *.ilk

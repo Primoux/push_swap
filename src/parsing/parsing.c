@@ -1,22 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enchevri <enchevri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/30 14:43:10 by enchevri          #+#    #+#             */
-/*   Updated: 2025/01/30 16:30:07 by enchevri         ###   ########.fr       */
+/*   Created: 2025/02/23 17:12:36 by enchevri          #+#    #+#             */
+/*   Updated: 2025/02/23 19:07:27 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+int	parsing(int count, char **arg)
 {
-	(void)argv;
-	if (argc < 2)
-	{
-		ft_printf("No args/Too much");
-	}
+	check_arg(count, arg);
+    return (0);
 }
