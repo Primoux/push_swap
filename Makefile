@@ -2,7 +2,7 @@
 
 NAME		=	push_swap
 CC		 	=	cc
-CFLAGS		=	-Wall -Wextra -Werror
+CFLAGS		=	-Wall -Wextra -Werror -g3
 
 #-------------------------------- DIRECTORIES --------------------------------#
 
@@ -46,7 +46,6 @@ BAR_LENGTH		:=	50
 
 #-------------------------------- COLORS --------------------------------#
 
-# Define colors and style
 BLACK		:=	\033[38;2;0;0;0m
 RED			:=	\033[38;2;220;20;60m
 GREEN		:=	\033[38;2;46;139;87m
@@ -60,7 +59,6 @@ PURPLE		:=	\033[38;2;147;112;219m
 RESET		:=	\033[0m
 BOLD		:=	\033[1m
 
-# Simplified progress bar function
 define draw_progress_bar
 	@printf "\r$(CYAN)$(BOLD)Compiling push_swap: $(RESET)["
 	@n=$(CURRENT_FILE); \
@@ -90,7 +88,6 @@ $(NAME): $(LIBFT) $(OBJS)
 	@printf "$(GREEN)$(BOLD)Build successful!$(RESET) Created $(BOLD)$(NAME)$(RESET)\n"
 
 
-# Update compilation rule
 $(OBJ_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
 	$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
