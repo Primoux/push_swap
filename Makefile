@@ -23,7 +23,7 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 #-------------------------------- SOURCE FILES --------------------------------#
 
-PARSING_SRCS	=	parsing.c check_arg.c
+PARSING_SRCS	=	parsing.c check_arg.c check_doublon.c
 
 MAIN_SRCS		=	main.c
 

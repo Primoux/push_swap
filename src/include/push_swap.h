@@ -6,23 +6,30 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:19:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/02/23 19:06:50 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/02/25 18:36:34 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 /*-------------------------------- INCLUDES --------------------------------*/
 
-/* Standard Libraries */
-# include <stdlib.h>
-
 /*-------------------------------- DEFINES --------------------------------*/
 
-# define GOOD_ARG "0123456789-+"
+typedef struct s_content
+{
+	int					index;
+	int					content;
+}						t_content;
 
-int	parsing(int count, char **arg);
-int	check_arg(int count, char **arg);
+
+
+/*-------------------------------- PARSING --------------------------------*/
+
+int						parsing(int ac, char **av, t_list_db_cir *stack_a);
+int						check_arg(int ac, char **av, t_list_db_cir *stack_a);
 
 #endif
