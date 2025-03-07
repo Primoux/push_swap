@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/05 22:58:46 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/06 20:04:12 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,22 +37,22 @@ int	split_arg(char *av, t_list_db_cir **stack_a)
 	int				y;
 	char			**tmp;
 	t_list_db_cir	*new_node;
-	int				content_ptr;
+	long			nb;
 
 	tmp = ft_split(av, ' ');
 	if (!tmp)
 		return (0);
 	y = 0;
+	if (tmp[0] == NULL)
+		return (1);
 	while (tmp[y])
 	{
-		if (is_valid_argument(tmp[y]) == 1)
+		if (is_valid_argument(tmp[y]) == 1 || ft_atoi(tmp[y], &nb) != 0)
 		{
-			ft_printf("wrong arg %s\n", tmp[y]);
 			free_tab(tmp);
 			return (1);
 		}
-		content_ptr = ft_atoi(tmp[y]);
-		new_node = ft_lstnew_db_cir(content_ptr);
+		new_node = ft_lstnew_db_cir(nb);
 		if (!new_node)
 		{
 			free_tab(tmp);
@@ -61,10 +61,7 @@ int	split_arg(char *av, t_list_db_cir **stack_a)
 		ft_lstadd_back_db_cir(stack_a, new_node);
 		y++;
 	}
-	y = 0;
-	while (tmp[y])
-		free(tmp[y++]);
-	free(tmp);
+	free_tab(tmp);
 	return (0);
 }
 

@@ -10,6 +10,7 @@ LIBFT_DIR		=	src/lib/libft
 INCLUDE_DIR		=	src/include
 PARSING_DIR		=	src/parsing/
 MAIN_DIR		=	src/main/
+OPERATION_DIR	=	src/operations/
 OBJ_DIR			=	obj/
 
 #-------------------------------- INCLUDES & FLAGS --------------------------------#
@@ -27,8 +28,11 @@ PARSING_SRCS	=	parsing.c check_arg.c check_doublon.c
 
 MAIN_SRCS		=	main.c
 
+OPERATION_SRCS	=	swap.c test_op.c double_swap.c
+
 SRCS			=	$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
-					$(addprefix $(MAIN_DIR), $(MAIN_SRCS))
+					$(addprefix $(MAIN_DIR), $(MAIN_SRCS)) \
+					$(addprefix $(OPERATION_DIR), $(OPERATION_SRCS))
 
 #-------------------------------- OBJECTS --------------------------------------#
 
