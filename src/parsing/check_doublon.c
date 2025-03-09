@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 16:17:53 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/05 23:22:31 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/09 14:55:25 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int	check_duplicate(t_list_db_cir *stack)
 		{
 			if (temp->content == current->content)
 			{
-				ft_printf("Error\nDoublon found\nIndex :[%d] = %d\nIndex :[%d] = %d\n",
+				ft_printf("Error\nIndex :[%d] = %d\nIndex :[%d] = %d\n",
 					current->index, current->content, temp->index,
 					temp->content);
 				return (1);

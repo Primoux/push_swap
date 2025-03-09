@@ -6,14 +6,14 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/06 20:04:12 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/09 16:29:30 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "push_swap.h"
 
-int	is_valid_argument(char *str)
+static int	is_valid_argument(char *str)
 {
 	int	i;
 
@@ -32,7 +32,7 @@ int	is_valid_argument(char *str)
 	return (0);
 }
 
-int	split_arg(char *av, t_list_db_cir **stack_a)
+static int	split_arg(char *av, t_list_db_cir **stack_a)
 {
 	int				y;
 	char			**tmp;
@@ -65,18 +65,29 @@ int	split_arg(char *av, t_list_db_cir **stack_a)
 	return (0);
 }
 
-void	put_index(t_list_db_cir *stack)
+static void	put_sorted_index(t_list_db_cir *stack, int ac)
 {
 	int				i;
+	int				content;
+	unsigned int	count_bigger;
 	t_list_db_cir	*tmp;
 
-	i = 1;
-	tmp = stack;
-	stack->index = 0;
-	stack = stack->next;
-	while (tmp != stack)
+	i = 0;
+	ac -= 1;
+	while (i < ac)
 	{
-		stack->index = i;
+		count_bigger = 0;
+		tmp = stack->next;
+		content = stack->content;
+		while (tmp != stack)
+		{
+			if (content < tmp->content)
+			{
+				count_bigger++;
+			}
+			tmp = tmp->next;
+		}
+		stack->index = (ac - 1) - count_bigger;
 		stack = stack->next;
 		i++;
 	}
@@ -93,6 +104,6 @@ int	check_arg(int ac, char **av, t_list_db_cir **stack_a)
 			return (1);
 		i++;
 	}
-	put_index(*stack_a);
+	put_sorted_index(*stack_a, ac);
 	return (0);
 }

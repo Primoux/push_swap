@@ -3,7 +3,7 @@
 NAME		=	push_swap
 CC		 	=	cc
 CFLAGS		=	-Wall -Wextra -Werror -g3
-
+CFLAGSS		=	-Weverything -Werror -Wno-padded -g3
 #-------------------------------- DIRECTORIES --------------------------------#
 
 LIBFT_DIR		=	src/lib/libft
@@ -28,7 +28,7 @@ PARSING_SRCS	=	parsing.c check_arg.c check_doublon.c
 
 MAIN_SRCS		=	main.c
 
-OPERATION_SRCS	=	swap.c test_op.c double_swap.c
+OPERATION_SRCS	=	swap.c test_op.c push.c
 
 SRCS			=	$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
 					$(addprefix $(MAIN_DIR), $(MAIN_SRCS)) \
