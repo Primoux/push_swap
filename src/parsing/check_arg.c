@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 18:11:12 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:13:38 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	is_valid_argument(char *str)
 		if (str[i] == '-' || str[i] == '+')
 			i++;
 		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && (str[i
-					+ 1] == '-' || str[i + 1] == '+')))
+						+ 1] == '-' || str[i + 1] == '+')))
 			return (1);
 		i++;
 	}
@@ -48,16 +48,10 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 	while (tmp[y])
 	{
 		if (is_valid_argument(tmp[y]) == 1 || ft_atoi(tmp[y], &nb) != 0)
-		{
-			free_tab(tmp);
-			return (1);
-		}
+			return (free_tab(tmp), 1);
 		new_node = ft_lstnew_db_cir(nb);
 		if (!new_node)
-		{
-			free_tab(tmp);
-			return (1);
-		}
+			return (free_tab(tmp), 1);
 		ft_lstadd_back_db_cir(stack_a, new_node);
 		y++;
 	}

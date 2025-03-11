@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 23:35:23 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/07 18:50:17 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:07:07 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ static void	swap(t_list_db_cir *stack)
 		stack->next->content = tmp;
 	}
 }
+
 void	double_swap(t_list_db_cir *stack_a, t_list_db_cir *stack_b)
 {
 	swap(stack_a);

@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 14:06:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 15:40:22 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:16:48 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,29 +42,29 @@ static void	sort_three(t_list_db_cir **stack_a)
 
 static void	push_smallest(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
 {
-	t_list_db_cir	*current;
+	t_list_db_cir	*tmp;
 	int				min_pos;
 	int				min;
 	int				i;
 	int				size;
 
 	size = ft_lstsize_db_cir(*stack_a);
-	min = (*stack_a)->index;
+	tmp = *stack_a;
+	min = tmp->index;
 	min_pos = 0;
-	current = *stack_a;
 	i = 0;
 	while (i < size)
 	{
-		if (current->index < min)
+		if (tmp->index < min)
 		{
-			min = current->index;
+			min = tmp->index;
 			min_pos = i;
 		}
-		current = current->next;
+		tmp = tmp->next;
 		i++;
 	}
 	if (min_pos <= size / 2)
-		while (min_pos-- > 0)
+		while (min_pos--)
 			rotate_a(stack_a);
 	else
 		while (min_pos++ < size)

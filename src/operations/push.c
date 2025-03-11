@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/06 20:43:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 18:14:52 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:06:47 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ static void	push(t_list_db_cir **stack_sender, t_list_db_cir **stack_receiver)
 	}
 	ft_lstadd_front_db_cir(stack_receiver, node_send);
 }
+
 void	push_back(t_list_db_cir **stack_a, t_list_db_cir **stack_b, int i)
 {
 	int	size;
