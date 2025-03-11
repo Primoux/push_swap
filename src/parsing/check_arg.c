@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/09 16:29:30 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 18:11:12 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 	int				y;
 	char			**tmp;
 	t_list_db_cir	*new_node;
-	long			nb;
+	int				nb;
 
 	tmp = ft_split(av, ' ');
 	if (!tmp)
@@ -69,11 +69,10 @@ static void	put_sorted_index(t_list_db_cir *stack, int ac)
 {
 	int				i;
 	int				content;
-	unsigned int	count_bigger;
+	int				count_bigger;
 	t_list_db_cir	*tmp;
 
 	i = 0;
-	ac -= 1;
 	while (i < ac)
 	{
 		count_bigger = 0;
@@ -82,9 +81,7 @@ static void	put_sorted_index(t_list_db_cir *stack, int ac)
 		while (tmp != stack)
 		{
 			if (content < tmp->content)
-			{
 				count_bigger++;
-			}
 			tmp = tmp->next;
 		}
 		stack->index = (ac - 1) - count_bigger;
@@ -95,15 +92,26 @@ static void	put_sorted_index(t_list_db_cir *stack, int ac)
 
 int	check_arg(int ac, char **av, t_list_db_cir **stack_a)
 {
-	int	i;
+	int				i;
+	t_list_db_cir	*tmp;
 
 	i = 1;
 	while (i < ac)
 	{
 		if (split_arg(av[i], stack_a) == 1)
+		{
+			ft_printf("%s\n", av[i]);
 			return (1);
+		}
 		i++;
 	}
-	put_sorted_index(*stack_a, ac);
+	tmp = (*stack_a)->next;
+	i = 1;
+	while (tmp != *stack_a)
+	{
+		i++;
+		tmp = tmp->next;
+	}
+	put_sorted_index(*stack_a, i);
 	return (0);
 }

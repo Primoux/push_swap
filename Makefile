@@ -2,14 +2,15 @@
 
 NAME		=	push_swap
 CC		 	=	cc
-CFLAGS		=	-Wall -Wextra -Werror -g3
-CFLAGSS		=	-Weverything -Werror -Wno-padded -g3
+CFLAGSS		=	-Wall -Wextra -Werror -g3
+CFLAGS		=	-Weverything -Wno-padded -g3
 #-------------------------------- DIRECTORIES --------------------------------#
 
 LIBFT_DIR		=	src/lib/libft
 INCLUDE_DIR		=	src/include
 PARSING_DIR		=	src/parsing/
 MAIN_DIR		=	src/main/
+SOLVING_DIR		=	src/solving/
 OPERATION_DIR	=	src/operations/
 OBJ_DIR			=	obj/
 
@@ -24,15 +25,18 @@ LIBFT		= $(LIBFT_DIR)/libft.a
 
 #-------------------------------- SOURCE FILES --------------------------------#
 
-PARSING_SRCS	=	parsing.c check_arg.c check_doublon.c
+PARSING_SRCS	=	parsing.c check_arg.c check_doublon.c check_index_sorted.c
 
 MAIN_SRCS		=	main.c
 
-OPERATION_SRCS	=	swap.c test_op.c push.c
+OPERATION_SRCS	=	swap.c push.c rotate.c
+
+SOLVING_SRCS	=	start_algo.c little_sort.c
 
 SRCS			=	$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
 					$(addprefix $(MAIN_DIR), $(MAIN_SRCS)) \
-					$(addprefix $(OPERATION_DIR), $(OPERATION_SRCS))
+					$(addprefix $(OPERATION_DIR), $(OPERATION_SRCS)) \
+					$(addprefix $(SOLVING_DIR), $(SOLVING_SRCS))
 
 #-------------------------------- OBJECTS --------------------------------------#
 
