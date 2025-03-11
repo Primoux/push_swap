@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:54:40 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:09:31 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:20:25 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,12 @@ void	rotate_b(t_list_db_cir **stack_b)
 
 void	reverse_rotate_a(t_list_db_cir **stack_a)
 {
-	reverse_rotate(stack_a, 1);
+	rotate(stack_a, 1);
 	ft_printf("rra\n");
 }
 
 void	reverse_rotate_b(t_list_db_cir **stack_b)
 {
-	reverse_rotate(stack_b, 1);
+	rotate(stack_b, 1);
 	ft_printf("rrb\n");
 }

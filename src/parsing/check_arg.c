@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:13:38 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/11 20:19:58 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 	while (tmp[y])
 	{
 		if (is_valid_argument(tmp[y]) == 1 || ft_atoi(tmp[y], &nb) != 0)
-			return (free_tab(tmp), 1);
+			return ((void)free_tab(tmp), 1);
 		new_node = ft_lstnew_db_cir(nb);
 		if (!new_node)
-			return (free_tab(tmp), 1);
+			return ((void)free_tab(tmp), 1);
 		ft_lstadd_back_db_cir(stack_a, new_node);
 		y++;
 	}
