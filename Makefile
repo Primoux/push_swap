@@ -2,8 +2,8 @@
 
 NAME		=	push_swap
 CC		 	=	cc
-CFLAGSS		=	-Wall -Wextra -Werror -g3
-CFLAGS		=	-Weverything -Wno-padded -g3
+CFLAGS		=	-Wall -Wextra -Werror
+CFLAGSS		=	-Weverything -Wno-padded -g3
 #-------------------------------- DIRECTORIES --------------------------------#
 
 LIBFT_DIR		=	src/lib/libft

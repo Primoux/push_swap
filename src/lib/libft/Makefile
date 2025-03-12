@@ -1,11 +1,11 @@
 #-------------------------------- VARIABLES --------------------------------#
-NAME	= libft.a
-CC		= cc
-CFLAGS	= -Wall -Wextra -Werror -g3
+NAME	=	libft.a
+CC		=	cc
+CFLAGS	=	-Wall -Wextra -Werror
 CFLAGSS	=	-Weverything -Wno-padded -g3
-AR		= ar rcs 
-RM		= rm -f
-SHELL	= /bin/bash
+AR		= 	ar rcs 
+RM		= 	rm -f
+SHELL	= 	/bin/bash
 
 #-------------------------------- DIRECTORIES --------------------------------#
 INCLUDE_DIR 	= include
