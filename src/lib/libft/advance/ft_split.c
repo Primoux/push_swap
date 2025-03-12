@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 22:19:58 by marvin            #+#    #+#             */
-/*   Updated: 2025/03/11 20:19:28 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 20:18:39 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static size_t	count_words(char const *s, char c)
 
 static size_t	count_letters(char const *s, char c)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (s[i] != c && s[i])

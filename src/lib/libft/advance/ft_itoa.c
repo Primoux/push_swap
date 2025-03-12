@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: enchevri <enchevri@student.42.fr>          +#+  +:+       +#+        */
+/*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 13:45:31 by enchevri          #+#    #+#             */
-/*   Updated: 2024/11/21 19:45:29 by enchevri         ###   ########.fr       */
+/*   Updated: 2025/03/12 20:18:19 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	numlen(int n)
+static size_t	numlen(int n)
 {
-	int	len;
+	size_t	len;
 
 	len = 0;
 	if (n <= 0)
@@ -37,7 +37,7 @@ static int	n_absolut(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		len;
+	size_t	len;
 	long	num;
 
 	if (n == -2147483648)

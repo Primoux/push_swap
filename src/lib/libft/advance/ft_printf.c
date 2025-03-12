@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 22:20:00 by enchevri          #+#    #+#             */
-/*   Updated: 2025/02/11 17:00:37 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 20:13:09 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-int	print_format(char specifier, va_list ap)
+static int	print_format(char specifier, va_list ap)
 {
 	int	count;
 
 	count = 0;
 	if (specifier == 'c')
-		count += ft_putchar_fd(va_arg(ap, int), 1);
+		count += ft_putchar_fd((char)va_arg(ap, int), 1);
 	else if (specifier == 's')
 		count += ft_putstr_fd(va_arg(ap, char *), 1);
 	else if (specifier == 'p')
