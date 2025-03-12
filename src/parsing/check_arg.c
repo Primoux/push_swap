@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:19:58 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 17:32:33 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,17 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 
 	tmp = ft_split(av, ' ');
 	if (!tmp)
-		return (0);
+		return (1);
 	y = 0;
 	if (tmp[0] == NULL)
-		return (1);
+		return (free_tab(tmp), 1);
 	while (tmp[y])
 	{
 		if (is_valid_argument(tmp[y]) == 1 || ft_atoi(tmp[y], &nb) != 0)
-			return ((void)free_tab(tmp), 1);
+			return (free_tab(tmp), 1);
 		new_node = ft_lstnew_db_cir(nb);
 		if (!new_node)
-			return ((void)free_tab(tmp), 1);
+			return (free_tab(tmp), 1);
 		ft_lstadd_back_db_cir(stack_a, new_node);
 		y++;
 	}
@@ -93,10 +93,7 @@ int	check_arg(int ac, char **av, t_list_db_cir **stack_a)
 	while (i < ac)
 	{
 		if (split_arg(av[i], stack_a) == 1)
-		{
-			ft_printf("%s\n", av[i]);
 			return (1);
-		}
 		i++;
 	}
 	tmp = (*stack_a)->next;

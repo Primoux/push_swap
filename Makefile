@@ -6,8 +6,8 @@ CFLAGS		=	-Wall -Wextra -Werror
 CFLAGSS		=	-Weverything -Wno-padded -g3
 #-------------------------------- DIRECTORIES --------------------------------#
 
-LIBFT_DIR		=	src/lib/libft
-INCLUDE_DIR		=	src/include
+LIBFT_DIR		=	src/lib/libft/
+INCLUDE_DIR		=	src/include/
 PARSING_DIR		=	src/parsing/
 MAIN_DIR		=	src/main/
 SOLVING_DIR		=	src/solving/
@@ -115,7 +115,6 @@ fclean:
 	@printf "$(BLUE)Cleaning object files from push_swap...$(RESET)\n"
 	@rm -rf $(OBJ_DIR)
 	@printf "$(GREEN)Clean complete push_swap!$(RESET)\n"
-
 
 re: fclean
 	@$(MAKE) --silent all

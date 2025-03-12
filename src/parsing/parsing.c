@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:12:36 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/12 12:27:36 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 17:32:40 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	parsing(int ac, char **av, t_list_db_cir **stack_a)
 		return (1);
 	if (check_index_sorted(*stack_a) == 0)
 		return (1);
-	if (ft_lstsize_db_cir(*stack_a) <= 5)
+	if (ft_lstsize_db_cir(*stack_a) <= 25)
 		little_sort(stack_a, &stack_b);
 	else
 		start_algo(stack_a, &stack_b);

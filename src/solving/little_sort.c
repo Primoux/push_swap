@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 14:06:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/12 12:44:21 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 17:34:34 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	little_sort(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
 	}
 	else if (size == 3)
 		sort_three(stack_a);
-	else if (size <= 5)
+	else if (size <= 25)
 	{
 		while (ft_lstsize_db_cir(*stack_a) > 3)
 			push_smallest(stack_a, stack_b);
