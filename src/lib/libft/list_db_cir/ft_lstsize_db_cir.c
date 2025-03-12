@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 13:32:46 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/12 20:11:57 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 20:27:58 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_lstsize_db_cir(t_list_db_cir *lst)
 {
-	int			i;
+	int				i;
 	t_list_db_cir	*temp;
 
 	if (!lst)
