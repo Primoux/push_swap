@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 14:06:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:16:48 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 12:44:21 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	sort_three(t_list_db_cir **stack_a)
 		reverse_rotate_a(stack_a);
 }
 
-static void	push_smallest(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
+static int	search_smallest(t_list_db_cir *stack)
 {
 	t_list_db_cir	*tmp;
 	int				min_pos;
@@ -48,12 +48,14 @@ static void	push_smallest(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
 	int				i;
 	int				size;
 
-	size = ft_lstsize_db_cir(*stack_a);
-	tmp = *stack_a;
+	if (!stack)
+		return (0);
+	size = ft_lstsize_db_cir(stack);
+	tmp = stack;
 	min = tmp->index;
 	min_pos = 0;
-	i = 0;
-	while (i < size)
+	i = -1;
+	while (++i < size)
 	{
 		if (tmp->index < min)
 		{
@@ -61,8 +63,18 @@ static void	push_smallest(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
 			min_pos = i;
 		}
 		tmp = tmp->next;
-		i++;
 	}
+	return (min_pos);
+}
+
+static void	push_smallest(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
+{
+	int				min_pos;
+	int				size;
+
+	size = ft_lstsize_db_cir(*stack_a);
+	min_pos = 0;
+	min_pos = search_smallest(*stack_a);
 	if (min_pos <= size / 2)
 		while (min_pos--)
 			rotate_a(stack_a);
@@ -77,9 +89,7 @@ void	little_sort(t_list_db_cir **stack_a, t_list_db_cir **stack_b)
 	int	size;
 
 	size = ft_lstsize_db_cir(*stack_a);
-	if (size <= 1)
-		return ;
-	else if (size == 2)
+	if (size == 2)
 	{
 		if ((*stack_a)->index > (*stack_a)->next->index)
 			swap_a(*stack_a);
