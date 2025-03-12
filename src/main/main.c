@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 14:43:10 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:09:55 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 19:42:41 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,12 +62,12 @@ int	main(int argc, char **argv)
 
 	stack_a = NULL;
 	if (argc < 2)
-		return (1);
+		return (EXIT_FAILURE);
 	if (parsing(argc, argv, &stack_a) == 1)
 	{
 		ft_lstclear_db_cir(&stack_a);
-		return (1);
+		return (EXIT_FAILURE);
 	}
 	ft_lstclear_db_cir(&stack_a);
-	return (0);
+	return (EXIT_SUCCESS);
 }

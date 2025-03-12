@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:00:20 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/10 14:02:01 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/12 18:09:10 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	check_index_sorted(t_list_db_cir *stack)
 	t_list_db_cir	*tmp;
 	int				i;
 
-	i = 0;
+	i = stack->index;
 	tmp = stack;
 	if (tmp->index != i)
 		return (1);
