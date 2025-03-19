@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/12 20:11:32 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/19 18:52:46 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int	is_valid_argument(char *str)
 		if (str[i] == '-' || str[i] == '+')
 			i++;
 		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && (str[i
-						+ 1] == '-' || str[i + 1] == '+')))
+					+ 1] == '-' || str[i + 1] == '+')))
 			return (1);
 		i++;
 	}
@@ -37,7 +37,7 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 	int				y;
 	char			**tmp;
 	t_list_db_cir	*new_node;
-	int				nb;
+	long			nb;
 
 	tmp = ft_split(av, ' ');
 	if (!tmp)

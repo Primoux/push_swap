@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:45:04 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/10 19:18:27 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/19 18:52:23 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef enum e_bool
 
 int							ft_tolower(int c);
 int							ft_toupper(int c);
-int							ft_atoi(const char *str, int *nb);
+int							ft_atoi(const char *str, long *nb);
 int							ft_isalpha(int c);
 int							ft_isdigit(int c);
 int							ft_isalnum(int c);

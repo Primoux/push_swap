@@ -6,14 +6,14 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:25:22 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/10 13:50:14 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/19 18:51:43 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi(const char *str, int *nb)
+int	ft_atoi(const char *str, long *nb)
 {
 	int	sign;
 

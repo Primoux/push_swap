@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:19:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 17:57:16 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/15 13:24:35 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 
 int		parsing(int ac, char **av, t_list_db_cir **stack_a);
 int		check_arg(int ac, char **av, t_list_db_cir **stack_a);
-void	print_stack(t_list_db_cir *stack_a, t_list_db_cir *stack_b);
+//void	print_stack(t_list_db_cir *stack_a, t_list_db_cir *stack_b);
 int		check_duplicate(t_list_db_cir *stack);
 int		check_index_sorted(t_list_db_cir *stack);
 
