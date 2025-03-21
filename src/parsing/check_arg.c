@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/19 18:52:46 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/21 18:27:03 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ static int	is_valid_argument(char *str)
 			i++;
 		if (str[i] == '-' || str[i] == '+')
 			i++;
-		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && (str[i
-					+ 1] == '-' || str[i + 1] == '+')))
+		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && \
+			(str[i + 1] == '-' || str[i + 1] == '+')))
 			return (1);
 		i++;
 	}
