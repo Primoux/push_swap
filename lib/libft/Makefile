@@ -2,7 +2,6 @@
 NAME	=	libft.a
 CC		=	cc
 CFLAGS	=	-Wall -Wextra -Werror
-CFLAGSS	=	-Weverything -Wno-padded -g3
 AR		= 	ar rcs 
 RM		= 	rm -f
 
@@ -15,7 +14,7 @@ STRING_DIR  	= ./src/string/
 IO_DIR			= ./src/io/
 MEMORY_DIR  	= ./src/memory/
 ADVANCE_DIR 	= ./src/advance/
-OBJ_DIR			= obj/
+OBJ_DIR			= .obj/
 
 #-------------------------------- SOURCE FILES --------------------------------#
 

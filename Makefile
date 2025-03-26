@@ -1,18 +1,22 @@
 #-------------------------------- VARIABLES --------------------------------#
 
-NAME		=	push_swap
-CC		 	=	cc
-CFLAGS		=	-Wall -Wextra -Werror
-CFLAGSS		=	-Weverything -Wno-padded -g3
+NAME			=	push_swap
+NAME_DEBUG		=	push_swap_debug
+CC		 		=	cc
+CFLAGS			=	-Wall -Wextra -Werror
+DEBUG_FLAGS		=	-Wmissing-prototypes -Wno-padded -Wall -Wextra -g3
+DEP_FLAGS		=	-MMD -MP
 #-------------------------------- DIRECTORIES --------------------------------#
 
 LIBFT_DIR		=	./lib/libft/
 INCLUDE_DIR		=	./include/
 PARSING_DIR		=	src/parsing/
-MAIN_DIR		=	./
+MAIN_DIR		=	./src/
 SOLVING_DIR		=	src/solving/
 OPERATION_DIR	=	src/operations/
-OBJ_DIR			=	obj/
+OBJ_DIR			=	.obj/
+OBJ_DIR_DEBUG	=	.obj_debug/
+
 
 #-------------------------------- INCLUDES & FLAGS --------------------------------#
 
@@ -41,6 +45,8 @@ SRCS			=	$(addprefix $(PARSING_DIR), $(PARSING_SRCS)) \
 #-------------------------------- OBJECTS --------------------------------------#
 
 OBJS			=	$(patsubst %.c,$(OBJ_DIR)%.o,$(SRCS))
+OBJS_DEBUG		=	$(patsubst %.c,$(OBJ_DIR_DEBUG)%.o,$(SRCS))
+
 DEPENDENCIES	=	$(OBJS:.o=.d)
 
 #-------------------------------- PROGRESS BAR --------------------------------#
@@ -85,35 +91,52 @@ endef
 
 all: $(NAME)
 
-$(LIBFT): libft
-
-libft:
-	@$(MAKE) --silent -C $(LIBFT_DIR)
-
 $(NAME): $(LIBFT) $(OBJS)
 	@printf "$(BLUE)$(BOLD)Linking objects...$(RESET)\n"
-	@$(CC) $(OBJS) -o $(NAME)  $(LIBFT) $(LDFLAGS)
+	@$(CC) $(OBJS) -o $(NAME) $(DEP_FLAGS) $(LIBFT)
 	@printf "$(GREEN)$(BOLD)Build successful!$(RESET) Created $(BOLD)$(NAME)$(RESET)\n"
-
 
 $(OBJ_DIR)%.o: %.c
 	@mkdir -p $(dir $@)
 	$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
 	$(call draw_progress_bar)
-	@$(CC) $(CFLAGS) $(DEFINE) $(INCLUDES) -MMD -MP -c $< -o $@
+	@$(CC) $(DEFINE) $(INCLUDES)  -c $< -o $@
 	@if [ $(CURRENT_FILE) = $(TOTAL_FILES) ]; then echo; fi
+
+debug: $(NAME_DEBUG)
+
+$(NAME_DEBUG): $(LIBFT) $(OBJS_DEBUG)
+	@printf "$(BLUE)$(BOLD)Linking objects...$(RESET)\n"
+	@$(CC) $(DEBUG_FLAGS) $(OBJS_DEBUG) -o $(NAME_DEBUG) $(DEP_FLAGS) $(LIBFT)
+	@printf "$(GREEN)$(BOLD)Build successful!$(RESET) Created $(BOLD)$(NAME_DEBUG)$(RESET)\n"
+
+$(OBJ_DIR_DEBUG)%.o: %.c
+	@mkdir -p $(dir $@)
+	$(eval CURRENT_FILE=$(shell echo $$(($(CURRENT_FILE) + 1))))
+	$(call draw_progress_bar)
+	@$(CC) $(DEBUG_FLAGS) $(DEFINE) $(INCLUDES)  -c $< -o $@
+	@if [ $(CURRENT_FILE) = $(TOTAL_FILES) ]; then echo; fi
+
+$(LIBFT): libft
+
+libft:
+	@$(MAKE) --silent -C $(LIBFT_DIR)
+
 
 clean:
 	@printf "$(BLUE)Cleaning object files from push_swap...$(RESET)\n"
 	@rm -rf $(OBJ_DIR)
+	@printf "$(BLUE)Cleaning object debug files from push_swap_debug...$(RESET)\n"
+	@rm -rf $(OBJ_DIR_DEBUG)
 	@$(MAKE) --silent -C $(LIBFT_DIR) clean
 
 fclean:
 	@$(MAKE) --silent -C $(LIBFT_DIR) fclean
 	@printf "$(BLUE)Removing executable from push_swap...$(RESET)\n"
 	@rm -f $(NAME)
-	@printf "$(BLUE)Cleaning object files from push_swap...$(RESET)\n"
-	@rm -rf $(OBJ_DIR)
+	@printf "$(BLUE)Removing executable from push_swap_debug...$(RESET)\n"
+	@rm -f $(NAME_DEBUG)
+	@$(MAKE) --silent clean
 	@printf "$(GREEN)Clean complete push_swap!$(RESET)\n"
 
 re: fclean
