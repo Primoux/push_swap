@@ -8,13 +8,13 @@ RM		= 	rm -f
 
 #-------------------------------- DIRECTORIES --------------------------------#
 INCLUDE_DIR 	= include
-LIST_DIR		= list/
-LIST_DB_CIR_DIR = list_db_cir/
-CHAR_DIR		= char/
-STRING_DIR  	= string/
-IO_DIR			= io/
-MEMORY_DIR  	= memory/
-ADVANCE_DIR 	= advance/
+LIST_DIR		= ./src/list/
+LIST_DB_CIR_DIR = ./src/list_db_cir/
+CHAR_DIR		= ./src/char/
+STRING_DIR  	= ./src/string/
+IO_DIR			= ./src/io/
+MEMORY_DIR  	= ./src/memory/
+ADVANCE_DIR 	= ./src/advance/
 OBJ_DIR			= obj/
 
 #-------------------------------- SOURCE FILES --------------------------------#
