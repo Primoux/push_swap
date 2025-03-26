@@ -1,12 +1,13 @@
 # Prerequisites
 *.d
-
 # Object files
 *.o
 *.ko
 *.obj
+*.obj_debug
 *.d
 *push_swap
+*push_swap_debug
 *.elf
 *.json
 
