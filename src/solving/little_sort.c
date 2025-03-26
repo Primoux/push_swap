@@ -6,11 +6,10 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 14:06:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/12 20:27:37 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:10:07 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
 static void	sort_three(t_list_db_cir **stack_a)

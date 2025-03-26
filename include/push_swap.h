@@ -6,25 +6,25 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/08 16:19:48 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/15 13:24:35 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:14:53 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+/*-------------------------------- INCLUDES ----------------------------------*/
 # include "libft.h"
-/*-------------------------------- INCLUDES --------------------------------*/
 
-/*-------------------------------- DEFINES --------------------------------*/
+/*-------------------------------- DEFINES -----------------------------------*/
 
-/*-------------------------------- PARSING --------------------------------*/
+/*-------------------------------- PARSING -----------------------------------*/
 
 int		parsing(int ac, char **av, t_list_db_cir **stack_a);
 int		check_arg(int ac, char **av, t_list_db_cir **stack_a);
-//void	print_stack(t_list_db_cir *stack_a, t_list_db_cir *stack_b);
 int		check_duplicate(t_list_db_cir *stack);
 int		check_index_sorted(t_list_db_cir *stack);
+/*-------------------------------- ALGO --------------------------------------*/
 
 int		start_algo(t_list_db_cir **stack_a, t_list_db_cir **stack_b);
 void	little_sort(t_list_db_cir **stack_a, t_list_db_cir **stack_b);
@@ -40,5 +40,6 @@ void	rotate_a(t_list_db_cir **stack_a);
 void	reverse_rotate_a(t_list_db_cir **stack_a);
 void	rotate_b(t_list_db_cir **stack_b);
 void	reverse_rotate_b(t_list_db_cir **stack_b);
+/*----------------------------------------------------------------------------*/
 
 #endif

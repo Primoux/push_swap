@@ -6,11 +6,10 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/21 18:27:03 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:10:17 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
 static int	is_valid_argument(char *str)

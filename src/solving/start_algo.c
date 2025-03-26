@@ -6,11 +6,10 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/05 23:41:51 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 18:05:42 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:10:03 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
 static int	count_byteshift(t_list_db_cir *stack_a)

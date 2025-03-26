@@ -6,10 +6,10 @@ CFLAGS		=	-Wall -Wextra -Werror
 CFLAGSS		=	-Weverything -Wno-padded -g3
 #-------------------------------- DIRECTORIES --------------------------------#
 
-LIBFT_DIR		=	src/lib/libft/
-INCLUDE_DIR		=	src/include/
+LIBFT_DIR		=	./lib/libft/
+INCLUDE_DIR		=	./include/
 PARSING_DIR		=	src/parsing/
-MAIN_DIR		=	src/main/
+MAIN_DIR		=	./
 SOLVING_DIR		=	src/solving/
 OPERATION_DIR	=	src/operations/
 OBJ_DIR			=	obj/
@@ -17,7 +17,7 @@ OBJ_DIR			=	obj/
 #-------------------------------- INCLUDES & FLAGS --------------------------------#
 
 INCLUDES	=	-I $(INCLUDE_DIR) \
-				-I ./src/lib/libft/include \
+				-I ./lib/libft/include \
 
 #-------------------------------- LIBRARIES --------------------------------#
 

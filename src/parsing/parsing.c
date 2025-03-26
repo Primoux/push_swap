@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:12:36 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/19 19:08:37 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:07:56 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ int	parsing(int ac, char **av, t_list_db_cir **stack_a)
 	stack_b = NULL;
 	if (check_arg(ac, av, stack_a) == 1)
 	{
-		write(1, "Error\n", 6);
+		write(STDERR_FILENO, "Error\n", 6);
 		return (1);
 	}
 	if (check_duplicate(*stack_a) == 1)
 	{
-		write(1, "Error\n", 6);
+		write(STDERR_FILENO, "Error\n", 6);
 		return (1);
 	}
 	if (check_index_sorted(*stack_a) == 0)

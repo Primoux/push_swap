@@ -6,11 +6,10 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/10 14:54:40 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/11 20:20:25 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/26 14:10:24 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "push_swap.h"
 
 static void	rotate(t_list_db_cir **stack, int i)
