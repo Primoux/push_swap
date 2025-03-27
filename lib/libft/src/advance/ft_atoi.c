@@ -6,19 +6,22 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/04 13:25:22 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/19 18:51:43 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/27 19:22:42 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-int	ft_atoi(const char *str, long *nb)
+int	ft_atoi(const char *str, int *error)
 {
-	int	sign;
+	int		sign;
+	long	nb;
+	long int_min;
 
+	int_min = -2147483647;
 	sign = 1;
-	*nb = 0;
+	nb = 0;
 	while (*str == ' ' || (*str >= 9 && *str <= 13))
 		str++;
 	if (*str == '-' || *str == '+')
@@ -28,13 +31,11 @@ int	ft_atoi(const char *str, long *nb)
 	}
 	while ((*str >= '0' && *str <= '9'))
 	{
-		*nb = *nb * 10 + (*str - 48);
-		if (sign == 1 && (*nb > INT_MAX))
-			return (1);
-		str++;
+		nb = nb * 10 + (*str++ - 48);
+		if ((nb > INT_MAX) && sign == 1)
+			*error = 1;
+		else if (nb > INT_MAX && sign == -1)
+			*error = 1;
 	}
-	*nb = *nb * sign;
-	if (sign == -1 && *nb < INT_MIN)
-		return (1);
-	return (0);
+	return (sign * (int)nb);
 }
