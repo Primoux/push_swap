@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/23 17:20:25 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/27 19:22:11 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/28 17:00:33 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static int	is_valid_argument(char *str)
 			i++;
 		if (str[i] == '-' || str[i] == '+')
 			i++;
-		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && \
-			(str[i + 1] == '-' || str[i + 1] == '+')))
+		if ((!(str[i] >= '0' && str[i] <= '9')) || (str[i + 1] && (str[i
+						+ 1] == '-' || str[i + 1] == '+')))
 			return (1);
 		i++;
 	}
@@ -39,28 +39,25 @@ static int	split_arg(char *av, t_list_db_cir **stack_a)
 	int				nb;
 	int				error;
 
-	error = 0;
 	tmp = ft_split(av, ' ');
 	if (!tmp)
 		return (1);
-	y = 0;
 	if (tmp[0] == NULL)
-		return ((void)(free_tab(tmp)), 1);
-	while (tmp[y])
+		return ((free_tab_return_int(tmp, 1)));
+	y = -1;
+	while (tmp[++y])
 	{
 		if (is_valid_argument(tmp[y]) == 1)
-			return ((void)(free_tab(tmp)), 1);
+			return ((free_tab_return_int(tmp, 1)));
 		nb = ft_atoi(tmp[y], &error);
 		if (error != 0)
 			return (1);
 		new_node = ft_lstnew_db_cir(nb);
 		if (!new_node)
-			return ((void)(free_tab(tmp)), 1);
+			return ((free_tab_return_int(tmp, 1)));
 		ft_lstadd_back_db_cir(stack_a, new_node);
-		y++;
 	}
-	free_tab(tmp);
-	return (0);
+	return (free_tab_return_int(tmp, 0));
 }
 
 static void	put_sorted_index(t_list_db_cir *stack, int ac)

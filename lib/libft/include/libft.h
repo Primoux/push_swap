@@ -6,7 +6,7 @@
 /*   By: enchevri <enchevri@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/08 09:45:04 by enchevri          #+#    #+#             */
-/*   Updated: 2025/03/19 18:52:23 by enchevri         ###   ########lyon.fr   */
+/*   Updated: 2025/03/28 16:51:56 by enchevri         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef enum e_bool
 
 int							ft_tolower(int c);
 int							ft_toupper(int c);
-int							ft_atoi(const char *str, long *nb);
+int							ft_atoi(const char *str, int *error);
 int							ft_isalpha(int c);
 int							ft_isdigit(int c);
 int							ft_isalnum(int c);
@@ -73,7 +73,8 @@ char						*ft_substr(char const *s, unsigned int start,
 char						*ft_strjoin(char const *s1, char const *s2);
 char						*str_free_to_join(char *s1, char *s2);
 char						*ft_strtrim(char const *s1, char const *set);
-char						**free_tab(char **tab);
+char						**free_tab_return_null(char **tab);
+int							free_tab_return_int(char **tab, int return_var);
 char						**ft_split(char const *s, char c);
 char						*ft_itoa(int n);
 char						*ft_strmapi(char const *s, char (*f)(unsigned int,
